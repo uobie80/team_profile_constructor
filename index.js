@@ -26,6 +26,7 @@ const engineer_questions = [
     'Please enter the name of the school the intern is attending.',
 ];
 
+
 // Create a function to generate HTML file
 function generateHTML(fileName, data) {
 
@@ -35,65 +36,71 @@ fs.writeFile(fileName, html, (err) => err ? console.error(err) : console.log('Co
 
 }
 
+
+function showInternPrompts(){}
+
+function showEngineerprompts(){}
+
+function ShowMenu(){
+
+    inquirer
+    .prompt([
+        {
+             type: 'list',
+             message: "Please select an option to add an intern or engineer profile or finish to exit",
+             name: 'menu',
+             choices: ['Intern', 'Engineer', 'Finish'],
+            },
+          ])
+    .then((response) => { 
+            console.log(response);
+            if (response.chocies === "intern"){
+                showInternPrompts();
+            } else if (response.choices === "Engineer") {
+                showEngineerprompts();
+            } else {
+                generateHTML('dist/index.html', response);
+            }
+            
+    });
+
+}
+
+
 function init(){
 
     inquirer
     .prompt([
           {
-                      type: 'input',
-                      message: questions[0],
-                      name: 'username',
+              type: 'input',
+              message: questions[0],
+              name: 'name',
                     },
           {
-                      type: 'input',
-                      message: questions[1],
-                      name: 'email',
+              type: 'input',
+              message: questions[1],
+              name: 'employee_id',
                     },
           {
-                      type: 'input',
-                      message: questions[2],
-                      name: 'title',
+              type: 'input',
+              message: questions[2],
+              name: 'email',
                     },
           {
-                      type: 'input',
-                      message: questions[3],
-                      name: 'description',
-                    },
-          {
-                      type: 'input',
-                      message: questions[4],
-                      name: 'installation',
-                    },
-          {
-                      type: 'input',
-                      message: questions[5],
-                      name: 'usage'
-  
-                    },
-          {
-                      type: 'list',
-                      message: questions[6],
-                      name: 'license',
-                      choices: ['Apache 2.0', 'MIT', 'Perl', 'Mozilla', 'GNU'],
-                    },
-          {
-                      type: 'input',
-                      message: questions[7],
-                      name: 'contribute',
-                    },
-          {
-                      type: 'input',
-                      message: questions[8],
-                      name: 'tests',
+              type: 'input',
+              message: questions[3],
+              name: 'office_number',
                     },
   
           ])
     .then((response) => { 
             console.log(response);
-            generateHTML('dist/index.html', response);
+           ShowMenu();
     });
 
 }
+
+
 
 
 init();

@@ -2,6 +2,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generate_html = require('./src/generateHTML.js');
+const Employee = require('./lib/Employee');
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
+const Engineer = require('./lib/Engineer');
+
+const employee_profiles = [];
 
 // Create an array of questions for user input
 const manager_questions = [
@@ -79,7 +85,7 @@ function init(){
           {
               type: 'input',
               message: questions[1],
-              name: 'employee_id',
+              name: 'emplid',
                     },
           {
               type: 'input',
@@ -94,7 +100,13 @@ function init(){
   
           ])
     .then((response) => { 
+             //Output the user input to the console
             console.log(response);
+            //Initialize Manager object
+            mngr = new Manager(response.name, response.emplid, response.email, response.office_number);
+            //Add manager object to employee profile array
+            employee_profiles.push(mngr);
+            //Ask end user if he/she would like to continue creating additional employee profiles
            ShowMenu();
     });
 

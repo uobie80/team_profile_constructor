@@ -29,4 +29,4 @@ THEN I exit the application, and the HTML is generated
 
 ## Walkthrough Link
 The following link is a walkthrough video that demonstrates the functionality of the Team Profile Generator and passing unit tests.  
- - [Team Profile Generator]()
+ - [Team Profile Generator](https://watch.screencastify.com/v/HmfNfRBHJqVX7uozieEy)

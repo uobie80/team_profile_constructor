@@ -27,13 +27,6 @@ THEN I am prompted to enter the intern’s name, ID, email, and school, and I am
 WHEN I decide to finish building my team  
 THEN I exit the application, and the HTML is generated  
 
-## Walkthrough Demo Links
-- Walkthrough video that demonstrates the functionality of the Team Profile Generator and passing unit tests.  
- - Link:
-- Walkthrough video that shows all four tests passing from the command line.  
- - Link:
-- Walkthrough video that demonstrates how a user would invoke the application from the command line.  
- - Link:
-- Walkthrough video that demonstrates how a user would enter responses to all of the prompts in the application.  
- - Link:
-- Walkthrough video that demonstrate a generated HTML file that matches the user input.  
+## Walkthrough Link
+The following link is a walkthrough video that demonstrates the functionality of the Team Profile Generator and passing unit tests.  
+ - [Team Profile Generator]()

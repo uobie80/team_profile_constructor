@@ -70,8 +70,8 @@ function showInternPrompts(){
   
           ])
     .then((response) => { 
-             //Output the user input to the console
-            console.log(response);
+            
+            
             //Initialize Intern object
             let intern = new Intern(response.name, response.emplid, response.email, response.school);
             //Add intern object to employee profile array
@@ -109,8 +109,7 @@ function showEngineerprompts(){
   
           ])
     .then((response) => { 
-             //Output the user input to the console
-            console.log(response);
+            
             //Initialize Engineer object
             let engineer = new Engineer(response.name, response.emplid, response.email, response.github_username);
             //Add engineer object to employee profile array
@@ -138,7 +137,7 @@ function ShowMenu(){
             } else if (response.menu === "Engineer") {
                 showEngineerprompts();
             } else {
-                console.log(employee_profiles);
+                
                 generateHTML('dist/index.html', employee_profiles);
             }
             
@@ -174,8 +173,7 @@ function init(){
   
           ])
     .then((response) => { 
-             //Output the user input to the console
-            console.log(response);
+          
             //Initialize Manager object
             mngr = new Manager(response.name, response.emplid, response.email, response.office_number);
             //Add manager object to employee profile array

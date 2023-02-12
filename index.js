@@ -132,12 +132,13 @@ function ShowMenu(){
             },
           ])
     .then((response) => { 
-            console.log(response);
-            if (response.chocies === "intern"){
+            console.log(response.menu);
+            if (response.menu === "Intern"){
                 showInternPrompts();
-            } else if (response.choices === "Engineer") {
+            } else if (response.menu === "Engineer") {
                 showEngineerprompts();
             } else {
+                console.log(employee_profiles);
                 generateHTML('dist/index.html', employee_profiles);
             }
             
@@ -184,8 +185,6 @@ function init(){
     });
 
 }
-
-
 
 
 init();
